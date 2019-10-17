@@ -61,6 +61,12 @@ theme.border_normal = theme.window_bg_border
 theme.border_focus  = theme.window_fg_border
 theme.border_marked = theme.window_bg_selected
 
+-- Wibar
+theme.wibar_fg    = theme.fg_normal;
+theme.wibar_bg    = theme.bg_normal;
+theme.wibar_border_color = theme.border_focus;
+theme.wibar_border_width = theme.border_width;
+
 -- Taglist
 theme.taglist_font          = theme.font_mono .. "9.3"
 theme.taglist_squares_sel   = nil
