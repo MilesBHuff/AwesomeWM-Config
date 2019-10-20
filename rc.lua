@@ -1,36 +1,29 @@
--- Get current working directory
+-- Global variables
+DE = true
 cwd = "/home/miles/.config/awesome/"
 
--- If LuaRocks is installed, make sure that packages installed through it are found. If LuaRocks is not installed, do nothing.
-pcall(require, "luarocks.loader")
-
--- Basics
-gears = require("gears")
+-- Global imports
+pcall(require, "luarocks.loader") -- If LuaRocks is installed, make sure that packages installed through it are found. If LuaRocks is not installed, do nothing.
 awful = require("awful")
 
--- Themes
+-- Theme
 beautiful = require("beautiful")
-beautiful.init(cwd .. "themes/optimality/theme.lua")
+beautiful.init(cwd .. "theme/rc.lua")
 
--- Widgets
-wibox = require("wibox")
-menubar = require("menubar")
-naughty = require("naughty")
+-- Prerequisites
+require("de/notifications")
+require("wm/tags")
+
+-- Desktop environment
+if DE then
+    require("de/menu")
+    wibox = require("wibox")
+    require("de/widgets")
+    require("de/panels")
+end
 
 -- Window management
 require("awful.autofocus")
-
--- Hotkeys
-hotkeys_popup = require("awful.hotkeys_popup")
-require("awful.hotkeys_popup.keys")
-
--- Custom code
-require("src/errors")
-require("src/tags")
-require("src/menu")
-require("src/widgets")
-require("src/panels")
--- require("src/oldpanel")
-require("src/input")
-require("src/rules")
-require("src/signals")
+require("wm/input")
+require("wm/rules")
+require("wm/signals")

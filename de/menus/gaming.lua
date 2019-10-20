@@ -2,7 +2,7 @@
 local voxelMenu = {
 	{"&Starbound", env .. steam .. "steam://rungameid/211820" .. oput           , beautiful.icons .. "Applications/starbound_original.png"},
 	{"&Terraria" , env .. steam .. "steam://rungameid/105600" .. oput           , beautiful.icons .. "Applications/terraria_original.png" },
-	{"&Minecraft", env .. "java -jar /home/sweyn78/.minecraft/MagicLauncher.jar", beautiful.icons .. "Applications/mc_original.png"       },
+	{"&Minecraft", env .. "minecraft-launcher", beautiful.icons .. "Applications/mc_original.png"       },
 	{"&Robocraft", env .. steam .. "steam://rungameid/301520" .. oput           , beautiful.icons .. "Applications/robo_original.png"     },
 }
 local strategyMenu = {

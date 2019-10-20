@@ -1,3 +1,5 @@
+local naughty = require("naughty")
+
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
 if awesome.startup_errors then
@@ -23,4 +25,13 @@ do
         })
         in_error = false
     end)
+end
+
+-- Useful for debug text
+notify = function(text)
+    naughty.notify({
+		preset = naughty.config.presets.info,
+		title = "Notification",
+		text = text,
+    })
 end

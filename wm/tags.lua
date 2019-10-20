@@ -1,3 +1,5 @@
+local gears = require("gears")
+
 -- Layouts, in order of appearance (awful.layout.inc)
 layouts = {
     awful.layout.suit.floating,
