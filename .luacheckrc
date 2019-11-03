@@ -1,6 +1,6 @@
-self = false
 cache = true
 color = true
+self = false
 -- The default config may set global variables
 files["rc.lua"].allow_defined_top = true
 -- These globals can be set and accessed.
@@ -19,10 +19,10 @@ globals = {
     -- other
     "panels",
     -- defined in C
-    "screen",
+    "client"
     "mouse",
     "root",
-    "client"
+    "screen",
 },
 -- These globals can only be accessed.
 read_globals = {
@@ -34,10 +34,10 @@ read_globals = {
     "drawin",
     "key",
     "keygrabber",
+    "math.atan2",
     "mousegrabber",
     "selection",
+    "table.unpack",
     "tag",
     "window",
-    "table.unpack",
-    "math.atan2",
 },
