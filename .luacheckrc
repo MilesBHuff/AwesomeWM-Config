@@ -1,11 +1,19 @@
 std = {
     -- These globals can be set and accessed.
     globals = {
+        -- external
         "awful",
         "beautiful",
-        "notify",
-        "panels",
         "wibox",
+        -- defines
+        "cwd",
+        "de",
+        "layouts",
+        -- helpers
+        "notify",
+        "try_var",
+        -- other
+        "panels",
     },
     -- These globals can only be accessed.
     read_globals = {

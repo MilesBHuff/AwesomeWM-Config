@@ -1,41 +1,35 @@
-local gears = require("gears")
-
--- Layouts, in order of appearance (awful.layout.inc)
-layouts = {
-    awful.layout.suit.floating,
-  --awful.layout.suit.fair,
-  --awful.layout.suit.fair.horizontal,
-  --awful.layout.suit.tile.left,
-    awful.layout.suit.tile,
-  --awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
-  --awful.layout.suit.spiral.dwindle,
-  --awful.layout.suit.spiral,
-    awful.layout.suit.max,
-  --awful.layout.suit.max.fullscreen,
-  --awful.layout.suit.magnifier,
-  --awful.layout.suit.corner.nw,
-  --awful.layout.suit.corner.ne,
-  --awful.layout.suit.corner.sw,
-  --awful.layout.suit.corner.se,
+-- Define tags
+-- -----------------------------------------------------------------------------
+local tags = {}
+tags[1] = {
+  name   = "MAIN",
+  layout = layouts[2],
+}
+tags[2] = {
+  name   = "INET",
+  layout = layouts[1],
+}
+tags[3] = {
+  name   = "OVER",
+  layout = layouts[4],
 }
 
--- Virtual desktops
-tags = {
-    count  = 3,
-    names  = {"MAIN",     "INET",     "OVER"    },
-    layout = {layouts[2], layouts[1], layouts[4]},
-}
-awful.screen.connect_for_each_screen(function(screen)
-
-    -- Create the tags
-    tags[screen] = awful.tag(tags.names, screen, tags.layout)
-
-    -- Give the tags wallpapers
-    for t = 1, tags.count do
-        tags[screen][t]:connect_signal("property::selected", function(tag)
-            if not tag.selected then return end
-            gears.wallpaper.maximized("/home/miles/.local/share/GUI/Wallpapers/Workspace" .. t .. ".png", screen, true)
-        end)
+-- Get an attribute from all array indices at once
+-- -----------------------------------------------------------------------------
+local get_attrs = function(arr, attr)
+    local attrs = {}
+    for i = 1, #arr do
+        attrs[i] = arr[i][attr]
     end
+    return attrs
+end
+
+-- Apply tags
+-- -----------------------------------------------------------------------------
+awful.screen.connect_for_each_screen(function(screen)
+    awful.tag(get_attrs(tags, "name"), screen, get_attrs(tags, "layout"))
 end)
+
+-- Export
+-- -----------------------------------------------------------------------------
+return tags

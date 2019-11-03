@@ -1,13 +1,13 @@
 -- Panels
 -- #############################################################################
-
--- Defaults
--- =============================================================================
 -- Some variables (notably the coordinates) do not work in the wibox/wibar constructor,
 -- so instead of wrapping the default constructor and creating each panel in one call,
 -- I'm going to create a default panel, create copies of it, and overritde its properties one-by-one.
 -- Inelegant, but still functional and legible.
-local function newWibar()
+
+-- Custom wibar
+-- -----------------------------------------------------------------------------
+local new_wibar = function()
 	return wibox({
 
 		-- Misc
@@ -57,7 +57,7 @@ local panels = {}
 
 -- Panel #1
 -- -----------------------------------------------------------------------------
-panels[1] = newWibar()
+panels[1] = new_wibar()
 
 -- Dimensions
 panels[1].width  = 37
@@ -72,7 +72,7 @@ panels[1]:struts({left = panels[1].border_width + panels[1].width})
 
 -- Panel #2
 -- -----------------------------------------------------------------------------
-panels[2] = newWibar()
+panels[2] = new_wibar()
 
 -- Dimensions
 panels[2].width  = (panels[2].border_width * 2) + screen().geometry.width - panels[1].width

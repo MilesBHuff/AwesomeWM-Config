@@ -1,3 +1,4 @@
+
 --------------------------------------------------------------------------------
 -- Create an imagebox widget which will contains an icon indicating which layout we're using. We need one layoutbox per screen.
 mylayoutbox = {}

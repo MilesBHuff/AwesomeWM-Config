@@ -1,14 +1,3 @@
--- Notification wrapper
--- -----------------------------------------------------------------------------
-local notify = function(args)
-    args = args or {}
-    require("naughty").notify({
-		preset = args.preset and naughty.config.presets[args.preset] or nil,
-		title  = args.title and args.title or "Notification",
-		text   = args.text,
-    })
-end
-
 -- Handle errors from another instance
 -- -----------------------------------------------------------------------------
 -- Check if awesome encountered an error during startup and fell back to another config
@@ -21,7 +10,7 @@ if awesome.startup_errors then
 	})
 end
 
--- Handle runtime errors after startup
+-- Handle errors from this instance
 -- -----------------------------------------------------------------------------
 do
     local in_error = false -- Make sure we don't go into an endless error loop
@@ -36,7 +25,3 @@ do
         in_error = false
     end)
 end
-
--- Export
--- -----------------------------------------------------------------------------
-return notify
