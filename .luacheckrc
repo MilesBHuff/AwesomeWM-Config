@@ -1,12 +1,15 @@
-local std = {
+std = {
     -- These globals can be set and accessed.
     globals = {
         "awful",
         "beautiful",
-        "cwd"
+        "notify",
+        "panels",
+        "wibox",
     },
     -- These globals can only be accessed.
     read_globals = {
+        "awesome",
         "screen",
-    }
+    },
 }
