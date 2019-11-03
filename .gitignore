@@ -1,0 +1,11 @@
+## Unversionable
+**.bak
+**.old
+**.swp
+**.tmp
+
+## System files
+**/.directory
+**/.DS_Store
+**/desktop.ini
+**/thumbs.db
