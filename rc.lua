@@ -1,6 +1,6 @@
--- Global variables
-DE = true
-cwd = "/home/miles/.config/awesome/"
+-- Variables
+local de = true
+local cwd = "/home/miles/.config/awesome/"
 
 -- Global imports
 pcall(require, "luarocks.loader") -- If LuaRocks is installed, make sure that packages installed through it are found. If LuaRocks is not installed, do nothing.
@@ -15,11 +15,11 @@ require("de/notifications")
 require("wm/tags")
 
 -- Desktop environment
-if DE then
+if de then
     require("de/menu")
     wibox = require("wibox")
     require("de/widgets")
-    require("de/panels")
+    panels = require("de/panels")
 end
 
 -- Window management
