@@ -67,14 +67,28 @@ for s = 1, screen.count() do
 end
 
 --------------------------------------------------------------------------------
-myverticalspacer = wibox.widget.textbox("<span font='Noto Mono 9.3'>────</span>")  -- <span font='Noto Mono 32.6'>⁀</span>
-myhorizontalspacer = wibox.widget.textbox("<span font='Noto Mono 9.3'>   </span>")
+myverticalspacer = wibox.widget{
+    widget = wibox.widget.textbox,
+    markup = "<span font='Noto Mono 9.3'>────</span>", -- <span font='Noto Mono 32.6'>⁀</span>
+    align  = 'center',
+    valign = 'center',
+}
+myhorizontalspacer = wibox.widget{
+    widget = wibox.widget.textbox,
+    markup = "<span font='Noto Mono 9.3'>   </span>",
+    align  = 'center',
+    valign = 'center',
+}
 myglobalmenu = wibox.widget.textbox("<span font='Noto Sans 9.5'>File    Edit    View    Help  </span>")  -- Obviously just a shim.
 
 --------------------------------------------------------------------------------
 -- Create a systray-widget
-systray = wibox.widget.systray()
-systray:set_horizontal(true)
+systray = wibox.widget{
+    widget = wibox.widget.systray,
+    base_size = 22,
+    horizontal = false,
+    -- layout = wibox.layout.grid,
+}
 
 --------------------------------------------------------------------------------
 -- CPU and RAM usage
@@ -107,18 +121,14 @@ update_ram:start()
 
 --------------------------------------------------------------------------------
 -- Digital clock with calendar tooltip
-mytextclock = awful.widget.textclock("<span font='Noto Sans 7.5'>%b %d</span>" .. "%n" .. "<span font='Noto Mono Bold 9.0'>%H:%M</span>" .. "<span font='Noto Sans 7.5'>UTC-4</span>", 1)  -- "%-d" and "UTC%-:::z"
-function display_calendar()
-    local fd  = io.popen("/home/miles/.local/src/personal/misc-code/code/applets/display-calendar.bash")
-    local str = fd:read ("*all")
-    return str
-end
-local original_tooltip_font  = beautiful.tooltip_font
-      beautiful.tooltip_font = 'Noto Mono 9.5'
-local mytextclock_t          = awful.tooltip({objects = {mytextclock}})
-      mytextclock_t         :set_text(display_calendar())
-      beautiful.tooltip_font = original_tooltip_font
-
+mytextclock = wibox.widget{
+    widget = wibox.widget.textclock,
+    format = "<span font='Noto Sans 7.5'>%b %d</span>" .. "%n" .. "<span font='Noto Mono Bold 9.0'>%H:%M</span>" .. "<span font='Noto Sans 7.5'>UTC-4</span>", -- "%-d" and "UTC%-:::z"
+    align  = 'center',
+    valign = 'center',
+}
+local mycalendar = awful.widget.calendar_popup.month()
+mycalendar:attach( mytextclock, "bl" )
 --------------------------------------------------------------------------------
 -- Autohidden command-runner
 --    mypromptbox = awful.widget.prompt()

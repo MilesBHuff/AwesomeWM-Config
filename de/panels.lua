@@ -70,20 +70,20 @@ panels[1].y = -panels[1].border_width
 -- Screen Settings
 panels[1]:struts({left = panels[1].border_width + panels[1].width})
 
--- Panel #2
--- -----------------------------------------------------------------------------
-panels[2] = new_wibar()
+-- -- Panel #2
+-- -- -----------------------------------------------------------------------------
+-- panels[2] = new_wibar()
 
--- Dimensions
-panels[2].width  = (panels[2].border_width * 2) + screen().geometry.width - panels[1].width
-panels[2].height = 21
+-- -- Dimensions
+-- panels[2].width  = (panels[2].border_width * 2) + screen().geometry.width - panels[1].width
+-- panels[2].height = 21
 
--- Coordinates
-panels[2].x = -panels[2].border_width + panels[1].width + panels[1].border_width
-panels[2].y =  panels[2].border_width + screen().geometry.height - panels[2].height
+-- -- Coordinates
+-- panels[2].x = -panels[2].border_width + panels[1].width + panels[1].border_width
+-- panels[2].y =  panels[2].border_width + screen().geometry.height - panels[2].height
 
--- Screen Settings
-panels[2]:struts({bottom = panels[2].border_width + panels[2].height})
+-- -- Screen Settings
+-- panels[2]:struts({bottom = panels[2].border_width + panels[2].height})
 
 -- Layouts
 -- #############################################################################
@@ -100,13 +100,13 @@ layouts[1].onset   = wibox.layout.fixed.vertical()
 -- layouts[1].nucleus = wibox.layout.fixed.vertical()
 layouts[1].coda    = wibox.layout.fixed.vertical()
 
--- Layout #2
---------------------------------------------------------------------------------
-layouts[2] = {}
-layouts[2].panel   = wibox.layout.align.horizontal()
-layouts[2].onset   = wibox.layout.fixed.horizontal()
--- layouts[2].nucleus = wibox.layout.fixed.horizontal()
-layouts[2].coda    = wibox.layout.fixed.horizontal()
+-- -- Layout #2
+-- --------------------------------------------------------------------------------
+-- layouts[2] = {}
+-- layouts[2].panel   = wibox.layout.align.horizontal()
+-- layouts[2].onset   = wibox.layout.fixed.horizontal()
+-- -- layouts[2].nucleus = wibox.layout.fixed.horizontal()
+-- layouts[2].coda    = wibox.layout.fixed.horizontal()
 
 -- Configure
 -- =============================================================================
@@ -117,6 +117,8 @@ layouts[1].onset:  add(mylauncher)
 layouts[1].onset:  add(myverticalspacer)
 layouts[1].nucleus =   mytasklist[1]
 layouts[1].coda:   add(myverticalspacer)
+layouts[1].coda:   add(systray)
+layouts[1].coda:   add(myverticalspacer)
 layouts[1].coda:   add(mycpumonitor)
 layouts[1].coda:   add(myrammonitor)
 layouts[1].coda:   add(myverticalspacer)
@@ -124,12 +126,11 @@ layouts[1].coda:   add(mytextclock)
 layouts[1].coda:   add(myverticalspacer)
 layouts[1].coda:   add(mytaglist[1])
 
--- Layout #2
---------------------------------------------------------------------------------
-layouts[2].onset:add(mylayoutbox[1])
-layouts[2].onset:add(myhorizontalspacer)
-layouts[2].onset:add(myglobalmenu)
-layouts[2].coda: add(systray)
+-- -- Layout #2
+-- --------------------------------------------------------------------------------
+-- layouts[2].onset:add(mylayoutbox[1])
+-- layouts[2].onset:add(myhorizontalspacer)
+-- layouts[2].onset:add(myglobalmenu)
 -- layouts[2].coda: add(myhorizontalspacer)
 -- layouts[2].coda: add(myrunbox)
 
@@ -143,12 +144,12 @@ layouts[1].panel:set_middle(layouts[1].nucleus)
 layouts[1].panel:set_bottom(layouts[1].coda)
  panels[1]:      set_widget(layouts[1].panel)
 
--- Layout #2
---------------------------------------------------------------------------------
-layouts[2].panel:  set_left(layouts[2].onset)
--- layouts[2].panel:set_center(layouts[2].nucleus)
-layouts[2].panel: set_right(layouts[2].coda)
- panels[2]:      set_widget(layouts[2].panel)
+-- -- Layout #2
+-- --------------------------------------------------------------------------------
+-- layouts[2].panel:  set_left(layouts[2].onset)
+-- -- layouts[2].panel:set_center(layouts[2].nucleus)
+-- layouts[2].panel: set_right(layouts[2].coda)
+--  panels[2]:      set_widget(layouts[2].panel)
 
 -- Export
 -- #############################################################################
