@@ -113,26 +113,23 @@ layouts[1].coda    = wibox.layout.fixed.vertical()
 
 -- Layout #1
 -- -----------------------------------------------------------------------------
-layouts[1].onset:  add(mylauncher)
-layouts[1].onset:  add(myverticalspacer)
-layouts[1].nucleus =   mytasklist[1]
-layouts[1].coda:   add(myverticalspacer)
-layouts[1].coda:   add(systray)
-layouts[1].coda:   add(myverticalspacer)
-layouts[1].coda:   add(mycpumonitor)
-layouts[1].coda:   add(myrammonitor)
-layouts[1].coda:   add(myverticalspacer)
-layouts[1].coda:   add(mytextclock)
-layouts[1].coda:   add(myverticalspacer)
-layouts[1].coda:   add(mytaglist[1])
+layouts[1].onset:add(widgets.launcher)
+layouts[1].onset:add(widgets.spacers.vertical)
+layouts[1].nucleus = widgets.tasklist[1]
+layouts[1].coda: add(widgets.spacers.vertical)
+layouts[1].coda: add(widgets.apptray[1])
+layouts[1].coda: add(widgets.spacers.vertical)
+layouts[1].coda: add(widgets.monitors.cpu)
+layouts[1].coda: add(widgets.monitors.ram)
+layouts[1].coda: add(widgets.spacers.vertical)
+layouts[1].coda: add(widgets.clock)
+layouts[1].coda: add(widgets.spacers.vertical)
+layouts[1].coda: add(widgets.taglist[1])
 
 -- -- Layout #2
 -- --------------------------------------------------------------------------------
--- layouts[2].onset:add(mylayoutbox[1])
--- layouts[2].onset:add(myhorizontalspacer)
--- layouts[2].onset:add(myglobalmenu)
--- layouts[2].coda: add(myhorizontalspacer)
--- layouts[2].coda: add(myrunbox)
+-- layouts[2].onset:add(widgets.menubar)
+-- layouts[2].coda: add(widgets.runbox)
 
 -- Apply
 -- =============================================================================

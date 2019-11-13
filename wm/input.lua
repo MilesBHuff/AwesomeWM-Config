@@ -65,16 +65,16 @@ globalkeys = awful.util.table.join(
     end),
 
     -- Layout-manipulation
-	awful.key({modkey, "Shift"}, "Up"   , function() awful.layout.inc(layouts, -1   ) end),
-    awful.key({modkey, "Shift"}, "Down" , function() awful.layout.inc(layouts,  1   ) end),
-    awful.key({modkey, "Shift"}, "Left" , function() awful.client.swap.byidx(   1   ) end),
-    awful.key({modkey, "Shift"}, "Right", function() awful.client.swap.byidx(  -1   ) end),
-	awful.key({modkey, "Shift"}, ","    , function() awful.tag.incmwfact(      -0.05) end),
-	awful.key({modkey, "Shift"}, "."    , function() awful.tag.incmwfact(       0.05) end),
-	awful.key({modkey, "Shift"}, "]"    , function() awful.tag.incnmaster(     -1   ) end),
-	awful.key({modkey, "Shift"}, "["    , function() awful.tag.incnmaster(      1   ) end),
-	awful.key({modkey, "Shift"}, "-"    , function() awful.tag.incncol(        -1   ) end),
-	awful.key({modkey, "Shift"}, "="    , function() awful.tag.incncol(         1   ) end),
+	awful.key({modkey, "Shift"}, "Up"   , function() awful.layout.inc(globals.layouts, -1) end),
+    awful.key({modkey, "Shift"}, "Down" , function() awful.layout.inc(globals.layouts,  1) end),
+    awful.key({modkey, "Shift"}, "Left" , function() awful.client.swap.byidx( 1   ) end),
+    awful.key({modkey, "Shift"}, "Right", function() awful.client.swap.byidx(-1   ) end),
+	awful.key({modkey, "Shift"}, ","    , function() awful.tag.incmwfact(    -0.05) end),
+	awful.key({modkey, "Shift"}, "."    , function() awful.tag.incmwfact(     0.05) end),
+	awful.key({modkey, "Shift"}, "]"    , function() awful.tag.incnmaster(   -1   ) end),
+	awful.key({modkey, "Shift"}, "["    , function() awful.tag.incnmaster(    1   ) end),
+	awful.key({modkey, "Shift"}, "-"    , function() awful.tag.incncol(      -1   ) end),
+	awful.key({modkey, "Shift"}, "="    , function() awful.tag.incncol(       1   ) end),
 
 	-- Compatibility
 	awful.key({"Mod1", "Control"}, "Delete", function() awful.util.spawn("xkill") end),

@@ -6,8 +6,8 @@ beautiful = require("beautiful")
 
 -- Variables
 -- -----------------------------------------------------------------------------
-require("common/defines")
-beautiful.init(cwd .. "theme/rc.lua")
+globals = require("common/defines")
+beautiful.init(globals.cwd .. "theme/rc.lua")
 require("common/helpers")
 
 -- Error-handling
@@ -20,12 +20,11 @@ tags = require("wm/tags")
 
 -- Desktop environment
 -- -----------------------------------------------------------------------------
-if de then
+if globals.de then
     require("de/desktop")
-    require("de/menu")
-    wibox = require("wibox")
-    require("de/widgets")
-    panels = require("de/panels")
+    wibox   = require("wibox")
+    widgets = require("de/widgets")
+    panels  = require("de/panels")
 end
 
 -- Window management (post-DE)

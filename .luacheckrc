@@ -9,14 +9,12 @@ globals = {
     "awful",
     "beautiful",
     "wibox",
-    -- defines
-    "cwd",
-    "de",
-    "layouts",
     -- helpers
     "notify",
     "try_var",
     -- other
+    "globals",
+    "widgets",
     "panels",
     -- defined in C
     "client"

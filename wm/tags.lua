@@ -3,15 +3,15 @@
 local tags = {}
 tags[1] = {
   name   = "MAIN",
-  layout = layouts[2],
+  layout = globals.layouts[2],
 }
 tags[2] = {
   name   = "INET",
-  layout = layouts[1],
+  layout = globals.layouts[1],
 }
 tags[3] = {
   name   = "OVER",
-  layout = layouts[4],
+  layout = globals.layouts[4],
 }
 
 -- Get an attribute from all array indices at once
