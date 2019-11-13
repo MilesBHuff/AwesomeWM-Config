@@ -9,3 +9,6 @@
 **/.DS_Store
 **/desktop.ini
 **/thumbs.db
+
+## Editor configs
+**/.vscode/

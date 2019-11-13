@@ -14,5 +14,5 @@ return {
 	{nil,                nil,                                                         nil},
   --{"archiver",         env .. "chrt -b 0 WINEPREFIX='/home/Sweyn78/~/.wine' wine 'C:\\windows\\command\\start.exe /Unix' /home/Sweyn78/~/.wine/dosdevices/c:/users/sweyn78/Start\ Menu/Programs/7-Zip/7-Zip\ File\ Manager.lnk"}
 	{"&Torrent-client",  env .. "deluge-gtk -q",                                      nil},
-	{"&Virtual machine", env .. "bash /home/sweyn78/.local/scripts/launch/VBox.bash", nil},
+	{"&Virtual machine", env .. "bash '" .. globals.cwd .. "lib/wrappers/vbox.bash'", nil},
 }

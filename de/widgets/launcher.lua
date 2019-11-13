@@ -13,7 +13,7 @@ env   = " /usr/bin/env "
 kgtk  = " /usr/bin/kgtk-wrapper "
 oput  = " 1>&- 2>&- "
 steam = " LD_PRELOAD=/usr/lib32/libudev.so.1 /usr/bin/steam-native "
-game  = " /home/miles/.local/src/personal/misc-code/code/wrappers/LoadGame.sh "
+game  = " " .. globals.cwd .. "lib/wrappers/run-wo-comp.sh "
 wine  = " WINEPREFIX='/home/miles/.wine' "
 
 --------------------------------------------------------------------------------

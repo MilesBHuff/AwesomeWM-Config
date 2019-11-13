@@ -1,9 +1,8 @@
 --------------------------------------------------------------------------------
 
 local get_usage = function(args)
-    -- local fd  = io.popen("/home/miles/.local/src/personal/misc-code/code/applets/cpu-ram.bash " .. args)
-    -- local str = fd:read("*all")
-    local str = "[    ]"
+    local fd  = io.popen(globals.cwd .. "lib/applets/cpu-ram.bash " .. args)
+    local str = fd:read("*all")
     return str
 end
 

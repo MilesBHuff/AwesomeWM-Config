@@ -15,9 +15,9 @@ globalkeys = awful.util.table.join(
 	awful.key({globals.modkey}, "`",      awful.client.restore),
 
 	-- Utility
-	awful.key({              }, "Print",  function() io.popen("/home/sweyn78/.local/scripts/ScreenShot.sh") end),
+	awful.key({              }, "Print",  function() io.popen(globals.cwd .. "lib/actions/screenshot.sh") end),
 	awful.key({globals.modkey}, "Menu",   function() mymainmenu:show() end),
-	awful.key({globals.modkey}, "Print",  function() io.popen("/home/sweyn78/.local/scripts/CompToggle.sh") end),
+	awful.key({globals.modkey}, "Print",  function() io.popen(globals.cwd .. "lib/actions/toggle-comp.sh") end),
 	awful.key({globals.modkey}, "Return", function() mypromptbox[mouse.screen]:run() end),
 	awful.key({globals.modkey}, "Delete", function() awful.util.spawn("xkill") end),
 	awful.key({globals.modkey}, "F5",     function() awful.util.spawn("xrandr --output HDMI-0 --auto") end),
@@ -66,8 +66,8 @@ globalkeys = awful.util.table.join(
     ),
 
     -- Layout-manipulation
-	awful.key({globals.modkey, "Shift"}, "Up",    function() awful.layout.inc(globals.layouts, -1) end),
-    awful.key({globals.modkey, "Shift"}, "Down",  function() awful.layout.inc(globals.layouts,  1) end),
+	awful.key({globals.modkey, "Shift"}, "Up",    function() awful.layout.inc(globals.layouts, -1   ) end),
+    awful.key({globals.modkey, "Shift"}, "Down",  function() awful.layout.inc(globals.layouts,  1   ) end),
     awful.key({globals.modkey, "Shift"}, "Left",  function() awful.client.swap.byidx(           1   ) end),
     awful.key({globals.modkey, "Shift"}, "Right", function() awful.client.swap.byidx(          -1   ) end),
 	awful.key({globals.modkey, "Shift"}, ",",     function() awful.tag.incmwfact(              -0.05) end),
@@ -87,7 +87,7 @@ globalkeys = awful.util.table.join(
 		    client.focus:raise()
 		end
     end),
-    awful.key({"Mod1", "Shift"  }, "F12",    function() io.popen("/home/sweyn78/.local/scripts/CompToggle.sh") end),
+    awful.key({"Mod1", "Shift"  }, "F12",    function() io.popen(globals.cwd .. "lib/actions/toggle-comp.sh") end),
     awful.key({"Mod1",          }, "Tab",    function() -- awful.client.focus.history.previous()
 		awful.client.focus.byidx( 1)
 		if client.focus then
