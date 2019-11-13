@@ -1,14 +1,18 @@
+--------------------------------------------------------------------------------
+-- Using a textbox instead of a proper awesome spacer so that spacing etc is all handled by the font.
+local new_spacer = function(markup)
+    return wibox.widget{
+        widget = wibox.widget.textbox,
+        markup = markup,
+        align  = "center",
+        valign = "center",
+        wrap   = "word",
+        font   = "Noto Mono 9.3"
+    }
+end
+--------------------------------------------------------------------------------
 return {
-    vertical   = wibox.widget{
-        widget = wibox.widget.textbox,
-        markup = "<span font='Noto Mono 9.3'>────</span>", -- <span font='Noto Mono 32.6'>⁀</span>
-        align  = 'center',
-        valign = 'center',
-    },
-    horizontal = wibox.widget{
-        widget = wibox.widget.textbox,
-        markup = "<span font='Noto Mono 9.3'>   </span>",
-        align  = 'center',
-        valign = 'center',
-    },
+    vertical   = new_spacer("─────"),
+    horizontal = new_spacer(" | "),
 }
+--------------------------------------------------------------------------------
