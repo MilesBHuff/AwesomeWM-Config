@@ -1,6 +1,6 @@
 return {
     apptray  = require("de/widgets/apptray"),
-    clock    = require("de/widgets/clock"),
+    datetime = require("de/widgets/datetime"),
     launcher = require("de/widgets/launcher"),
   --menubar  = require("de/widgets/menubar"),
     monitors = require("de/widgets/monitors"),

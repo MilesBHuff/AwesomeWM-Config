@@ -122,7 +122,7 @@ layouts[1].coda: add(widgets.spacers.vertical)
 layouts[1].coda: add(widgets.monitors.cpu)
 layouts[1].coda: add(widgets.monitors.ram)
 layouts[1].coda: add(widgets.spacers.vertical)
-layouts[1].coda: add(widgets.clock)
+layouts[1].coda: add(widgets.datetime)
 layouts[1].coda: add(widgets.spacers.vertical)
 layouts[1].coda: add(widgets.taglist[1])
 
