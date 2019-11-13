@@ -54,100 +54,106 @@ end
 -- Define and Configure
 -- =============================================================================
 local panels = {}
+for s = 1, screen.count() do
+	panels[s] = {}
 
--- Panel #1
--- -----------------------------------------------------------------------------
-panels[1] = new_wibar()
+	-- Panel #1
+	-- -----------------------------------------------------------------------------
+	panels[s][1] = new_wibar()
 
--- Dimensions
-panels[1].width  = 37
-panels[1].height = (panels[1].border_width * 2) + screen().geometry.height
+	-- Dimensions
+	panels[s][1].width  = 37
+	panels[s][1].height = (panels[s][1].border_width * 2) + screen().geometry.height
 
--- Coordinates
-panels[1].x = -panels[1].border_width
-panels[1].y = -panels[1].border_width
+	-- Coordinates
+	panels[s][1].x = -panels[s][1].border_width
+	panels[s][1].y = -panels[s][1].border_width
 
--- Screen Settings
-panels[1]:struts({left = panels[1].border_width + panels[1].width})
+	-- Screen Settings
+	panels[s][1]:struts({left = panels[s][1].border_width + panels[s][1].width})
 
--- -- Panel #2
--- -- -----------------------------------------------------------------------------
--- panels[2] = new_wibar()
+	-- -- Panel #2
+	-- -- -----------------------------------------------------------------------------
+	-- panels[s][2] = new_wibar()
 
--- -- Dimensions
--- panels[2].width  = (panels[2].border_width * 2) + screen().geometry.width - panels[1].width
--- panels[2].height = 21
+	-- -- Dimensions
+	-- panels[s][2].width  = (panels[s][2].border_width * 2) + screen().geometry.width - panels[s][1].width
+	-- panels[s][2].height = 21
 
--- -- Coordinates
--- panels[2].x = -panels[2].border_width + panels[1].width + panels[1].border_width
--- panels[2].y =  panels[2].border_width + screen().geometry.height - panels[2].height
+	-- -- Coordinates
+	-- panels[s][2].x = -panels[s][2].border_width + panels[s][1].width + panels[s][1].border_width
+	-- panels[s][2].y =  panels[s][2].border_width + screen().geometry.height - panels[s][2].height
 
--- -- Screen Settings
--- panels[2]:struts({bottom = panels[2].border_width + panels[2].height})
+	-- -- Screen Settings
+	-- panels[s][2]:struts({bottom = panels[s][2].border_width + panels[s][2].height})
 
+end
 -- Layouts
 -- #############################################################################
 
 -- Define
 -- =============================================================================
 local layouts = {}
+for s = 1, screen.count() do
+	layouts[s] = {}
 
--- Layout #1
--- -----------------------------------------------------------------------------
-layouts[1] = {}
-layouts[1].panel   = wibox.layout.align.vertical()
-layouts[1].onset   = wibox.layout.fixed.vertical()
--- layouts[1].nucleus = wibox.layout.fixed.vertical()
-layouts[1].coda    = wibox.layout.fixed.vertical()
+	-- Layout #1
+	-- -----------------------------------------------------------------------------
+	layouts[s][1] = {}
+	layouts[s][1].panel   = wibox.layout.align.vertical()
+	layouts[s][1].onset   = wibox.layout.fixed.vertical()
+  --layouts[s][1].nucleus = wibox.layout.fixed.vertical()
+	layouts[s][1].coda    = wibox.layout.fixed.vertical()
 
--- -- Layout #2
--- --------------------------------------------------------------------------------
--- layouts[2] = {}
--- layouts[2].panel   = wibox.layout.align.horizontal()
--- layouts[2].onset   = wibox.layout.fixed.horizontal()
--- -- layouts[2].nucleus = wibox.layout.fixed.horizontal()
--- layouts[2].coda    = wibox.layout.fixed.horizontal()
+	-- -- Layout #2
+	-- --------------------------------------------------------------------------------
+	-- layouts[s][2] = {}
+	-- layouts[s][2].panel   = wibox.layout.align.horizontal()
+	-- layouts[s][2].onset   = wibox.layout.fixed.horizontal()
+	-- --layouts[s][2].nucleus = wibox.layout.fixed.horizontal()
+	-- layouts[s][2].coda    = wibox.layout.fixed.horizontal()
 
--- Configure
--- =============================================================================
+	-- Configure
+	-- =============================================================================
 
--- Layout #1
--- -----------------------------------------------------------------------------
-layouts[1].onset:add(widgets.launcher)
-layouts[1].onset:add(widgets.spacers.vertical)
-layouts[1].nucleus = widgets.tasklist[1]
-layouts[1].coda: add(widgets.spacers.vertical)
-layouts[1].coda: add(widgets.apptray[1])
-layouts[1].coda: add(widgets.spacers.vertical)
-layouts[1].coda: add(widgets.monitors.cpu)
-layouts[1].coda: add(widgets.monitors.ram)
-layouts[1].coda: add(widgets.spacers.vertical)
-layouts[1].coda: add(widgets.datetime)
-layouts[1].coda: add(widgets.spacers.vertical)
-layouts[1].coda: add(widgets.taglist[1])
+	-- Layout #1
+	-- -----------------------------------------------------------------------------
+	layouts[s][1].onset:add(widgets.launcher)
+	layouts[s][1].onset:add(widgets.spacers.vertical)
+	layouts[s][1].nucleus = widgets.tasklist[s]
+	layouts[s][1].coda: add(widgets.spacers.vertical)
+	layouts[s][1].coda: add(widgets.apptray[s])
+	layouts[s][1].coda: add(widgets.spacers.vertical)
+	layouts[s][1].coda: add(widgets.monitors.cpu)
+	layouts[s][1].coda: add(widgets.monitors.ram)
+	layouts[s][1].coda: add(widgets.spacers.vertical)
+	layouts[s][1].coda: add(widgets.datetime)
+	layouts[s][1].coda: add(widgets.spacers.vertical)
+	layouts[s][1].coda: add(widgets.taglist[s])
 
--- -- Layout #2
--- --------------------------------------------------------------------------------
--- layouts[2].onset:add(widgets.menubar)
--- layouts[2].coda: add(widgets.runbox)
+	-- -- Layout #2
+	-- --------------------------------------------------------------------------------
+	-- layouts[s][2].onset:add(widgets.menubar)
+	-- layouts[s][2].coda: add(widgets.runbox)
 
--- Apply
--- =============================================================================
+	-- Apply
+	-- =============================================================================
 
--- Layout #1
--- -----------------------------------------------------------------------------
-layouts[1].panel:   set_top(layouts[1].onset)
-layouts[1].panel:set_middle(layouts[1].nucleus)
-layouts[1].panel:set_bottom(layouts[1].coda)
- panels[1]:      set_widget(layouts[1].panel)
+	-- Layout #1
+	-- -----------------------------------------------------------------------------
+	layouts[s][1].panel:   set_top(layouts[s][1].onset)
+	layouts[s][1].panel:set_middle(layouts[s][1].nucleus)
+	layouts[s][1].panel:set_bottom(layouts[s][1].coda)
+	 panels[s][1]:      set_widget(layouts[s][1].panel)
 
--- -- Layout #2
--- --------------------------------------------------------------------------------
--- layouts[2].panel:  set_left(layouts[2].onset)
--- -- layouts[2].panel:set_center(layouts[2].nucleus)
--- layouts[2].panel: set_right(layouts[2].coda)
---  panels[2]:      set_widget(layouts[2].panel)
+	-- -- Layout #2
+	-- --------------------------------------------------------------------------------
+	-- layouts[s][2].panel:  set_left(layouts[s][2].onset)
+	-- --layouts[s][2].panel:set_center(layouts[s][2].nucleus)
+	-- layouts[s][2].panel: set_right(layouts[s][2].coda)
+	--  panels[s][2]:      set_widget(layouts[s][2].panel)
 
+end
 -- Export
 -- #############################################################################
 return panels
