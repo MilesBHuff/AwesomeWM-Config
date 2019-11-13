@@ -119,10 +119,10 @@ clientkeys = awful.util.table.join(
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it works on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
-for i = 1, 3 do
+for i = 1, #tags do
     globalkeys = awful.util.table.join(globalkeys,
         -- View tag only.
-        awful.key({globals.modkey}, "#" .. i + 3,
+        awful.key({globals.modkey}, "#" .. i + #tags,
             function()
                 local screen = mouse.screen
                 local tag = awful.tag.gettags(screen)[i]
@@ -132,7 +132,7 @@ for i = 1, 3 do
             end
         ),
         -- Toggle tag.
-        awful.key({globals.modkey, "Control"}, "#" .. i + 3,
+        awful.key({globals.modkey, "Control"}, "#" .. i + #tags,
             function()
                 local screen = mouse.screen
                 local tag = awful.tag.gettags(screen)[i]
@@ -142,7 +142,7 @@ for i = 1, 3 do
             end
         ),
         -- Move client to tag.
-        awful.key({globals.modkey, "Shift"}, "#" .. i + 3,
+        awful.key({globals.modkey, "Shift"}, "#" .. i + #tags,
             function()
                 if client.focus then
                     local tag = awful.tag.gettags(client.focus.screen)[i]
@@ -153,7 +153,7 @@ for i = 1, 3 do
             end
         ),
         -- Toggle tag.
-        awful.key({globals.modkey, "Control", "Shift"}, "#" .. i + 3,
+        awful.key({globals.modkey, "Control", "Shift"}, "#" .. i + #tags,
             function()
                 if client.focus then
                     local tag = awful.tag.gettags(client.focus.screen)[i]
