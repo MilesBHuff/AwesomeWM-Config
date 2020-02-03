@@ -37,6 +37,7 @@ local simulation_stronghold_menu = {
 	{"Stronghold &HD",            nil,                                                   nil},
 }
 local simulation_menu = {
+	{"Cities: Skylines",            env .. steam .. "steam://rungameid/255710" .. oput,              nil},
 	{"&Banished",                   env .. "playonlinux --run 'Banished32x'",                        nil},
 	{"&Stronghold games",           simulation_stronghold_menu,                                      nil},
 	{"&0 A.D.",                     env .. steam .. "steam://rungameid/9937877960117714944" .. oput, beautiful.icons .. "Applications/0ad_steam.png"},

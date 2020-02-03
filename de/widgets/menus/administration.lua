@@ -20,7 +20,7 @@ local settings_menu = {
 	{"A&wesome-configuration", env .. edit .. " " .. awesome.conffile,   nil},
 }
 return {
-	{"&Settings",                 settings_menu,                         beautiful.icons .. "Categories/preferences.png"},
+	{"&Settings",                 settings_menu,                        beautiful.icons .. "Categories/preferences.png"},
 	{nil,                         nil,                                  nil},
 	{"&Wine-manager",             env .. "playonlinux",                 beautiful.icons .. "Applications/wine.png"},
 	{"System-&monitor",           env .. "ksysguard",                   beautiful.icons .. "Applications/system-monitor.png"},

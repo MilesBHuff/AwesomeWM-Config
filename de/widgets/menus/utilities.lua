@@ -1,7 +1,10 @@
 communication_menu = {
-	{"&VoIP-client",     env .. "skype",   beautiful.icons .. "Applications/voip-client.png"},
-	{"&IRC-client",      env .. "hexchat", nil},
-	{"I&M-client",       env .. "pidgin",  nil},
+	{"&Webchat client",  env .. "franz",   nil},
+	{"&IRC client",      env .. "hexchat", nil},
+	{"I&M client",       env .. "pidgin",  nil},
+	{nil,                nil,              nil},
+	{"&Discord",         env .. "discord", nil},
+  --{"&Skype",           env .. "skype",   nil},
 }
 return {
 	{"&Terminal",        env .. terminal,                                             beautiful.icons .. "Applications/terminal.png"},
