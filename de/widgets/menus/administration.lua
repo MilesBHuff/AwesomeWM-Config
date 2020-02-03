@@ -20,16 +20,16 @@ local settings_menu = {
 	{"A&wesome-configuration", env .. edit .. " " .. awesome.conffile,   nil},
 }
 return {
-	{"&Settings",                 settings_menu,                        beautiful.icons .. "Categories/preferences.png"},
+	{"&Settings",                 settings_menu,                        beautiful.getIcon("categories", "preferences-desktop")},
 	{nil,                         nil,                                  nil},
-	{"&Wine-manager",             env .. "playonlinux",                 beautiful.icons .. "Applications/wine.png"},
-	{"System-&monitor",           env .. "ksysguard",                   beautiful.icons .. "Applications/system-monitor.png"},
-	{"&Info-center",              env .. "hardinfo",                    beautiful.icons .. "Applications/system-info.png"},
-	{"&Help",                     env .. terminal .. " -e man awesome", beautiful.icons .. "Applications/help-browser.png"},
+	{"&Wine-manager",             env .. "playonlinux",                 beautiful.getIcon("apps", "wine")},
+	{"System-&monitor",           env .. "ksysguard",                   beautiful.getIcon("apps", "system-monitor")},
+	{"&Info-center",              env .. "hardinfo",                    beautiful.getIcon("apps", "system-info")},
+	{"&Help",                     env .. terminal .. " -e man awesome", beautiful.getIcon("apps", "help-browser")},
 	{"&Cleaner",                  env .. "bleachbit",                   nil},
 	{nil,                         nil,                                  nil},
 	{"&User-manager (root)",      env .. "gksudo kuser %i -caption %c", nil},
-	{"&Partition-manager (root)", env .. "gksudo gparted",              beautiful.icons .. "Applications/partitioner.png"},
-	{"SMART-&inspector (root)",   env .. "gksudo gsmartcontrol",        beautiful.icons .. "Applications/disk-configurer.png"},
+	{"&Partition-manager (root)", env .. "gksudo gparted",              beautiful.getIcon("apps", "partitioner")},
+	{"SMART-&inspector (root)",   env .. "gksudo gsmartcontrol",        beautiful.getIcon("apps", "disk-configurer")},
 	{"C&leaner (root)",           env .. "gksudo bleachbit",            nil},
 }

@@ -18,15 +18,15 @@ wine  = " WINEPREFIX='/home/miles/.wine' "
 
 --------------------------------------------------------------------------------
 local main_menu = awful.menu({items = {
-	{"&Utilities",      require("de/widgets/menus/utilities"),      beautiful.icons .. "Categories/accessories.png"},
-	{"&Productivity",   require("de/widgets/menus/productivity"),   beautiful.icons .. "Categories/office.png"},
-	{"&Multimedia",     require("de/widgets/menus/multimedia"),     beautiful.icons .. "Categories/multimedia.png"},
-	{"G&raphics",       require("de/widgets/menus/graphics"),       beautiful.icons .. "Categories/graphics.png"},
-	{"&Gaming",         require("de/widgets/menus/gaming"),         beautiful.icons .. "Categories/games.png"},
-	{"&Administration", require("de/widgets/menus/administration"), beautiful.icons .. "Categories/system.png"},
+	{"&Utilities",      require("de/widgets/menus/utilities"),      beautiful.getIcon("categories", "applications-accessories")},
+	{"&Productivity",   require("de/widgets/menus/productivity"),   beautiful.getIcon("categories", "applications-office")},
+	{"&Multimedia",     require("de/widgets/menus/multimedia"),     beautiful.getIcon("categories", "applications-multimedia")},
+	{"G&raphics",       require("de/widgets/menus/graphics"),       beautiful.getIcon("categories", "applications-graphics")},
+	{"&Gaming",         require("de/widgets/menus/gaming"),         beautiful.getIcon("categories", "applications-games")},
+	{"&Administration", require("de/widgets/menus/administration"), beautiful.getIcon("categories", "applications-system")},
 	{nil,               nil,                                        nil},
 	{"&Leaving",        require("de/widgets/menus/leaving"),        nil},
 }})
 
 --------------------------------------------------------------------------------
-return awful.widget.launcher({image = beautiful.icons .. "Categories/launcher.png", menu = main_menu})
+return awful.widget.launcher({image = beautiful.getIcon("apps", "gnome-panel-launcher"), menu = main_menu})

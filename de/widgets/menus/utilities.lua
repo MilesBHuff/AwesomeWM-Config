@@ -7,11 +7,11 @@ communication_menu = {
   --{"&Skype",           env .. "skype",   nil},
 }
 return {
-	{"&Terminal",        env .. terminal,                                             beautiful.icons .. "Applications/terminal.png"},
-	{"&File-manager",    env .. "dolphin",                                            beautiful.icons .. "Applications/file-manager.png"},
+	{"&Terminal",        env .. terminal,                                             beautiful.getIcon("apps", "terminal")},
+	{"&File-manager",    env .. "dolphin",                                            beautiful.getIcon("apps", "file-manager")},
 	{nil,                nil,                                                         nil},
-	{"&Char'-selector",  env .. "gnome-character-map",                                beautiful.icons .. "Applications/character-selector.png"},
-	{"Ca&lculator",      env .. "qalculate-gtk",                                      beautiful.icons .. "Applications/calculator.png"},
+	{"&Char'-selector",  env .. "gnome-character-map",                                beautiful.getIcon("apps", "character-selector")},
+	{"Ca&lculator",      env .. "qalculate-gtk",                                      beautiful.getIcon("apps", "calculator")},
 	{nil,                nil,                                                         nil},
 	{"Communications",   communication_menu,                                          nil},
 	{nil,                nil,                                                         nil},

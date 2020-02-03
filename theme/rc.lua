@@ -1,9 +1,16 @@
 theme = {}
+theme.conffile   = "/home/miles/.config/awesome/theme/rc.lua"
+theme.icon_theme = "Delft" -- Define the icon theme for application icons. If not set then the icons from /usr/share/icons and /usr/share/icons/hicolor will be used.
+theme.icons      = "/usr/share/icons/" .. theme.icon_theme
 
-theme.conffile      = "/home/miles/.config/awesome/themes/optimality/theme.lua"
-theme.icons         = "/home/miles/.local/share/GUI/Icons/"
+-- Get-Icon function
+--------------------------------------------------------------------------------
+theme.getIcon = function(category, name)
+    return io.popen(globals.cwd .. "theme/lib/get-icon.bash '" .. theme.icon_theme .. "' '" .. category .. "' '" .. name .. "'"):read("*all"):gsub("\n", "")
+end
 
 -- Base values
+--------------------------------------------------------------------------------
 theme.font_mono  = "monospace "
 theme.font_sans  = "sans-serif "
 theme.font_serif = "serif "
@@ -108,7 +115,7 @@ theme.tooltip_border_color = theme.view_bg_border
 -- theme.mouse_finder_factor          =
 
 -- Menu
-theme.menu_submenu_icon = "/home/miles/.local/share/GUI/Icons/Actions/next.png"
+theme.menu_submenu_icon = theme.icons .. "-Darkest/actions/24/next.png"
 theme.menu_height       = 24
 theme.menu_width        = 192
 theme.menu_bg_normal    = theme.window_bg_normal
@@ -123,28 +130,28 @@ theme.normal_border_width = 0
 theme.dialog_border_width = 4
 
 -- Define the image to load
-theme.titlebar_close_button_normal = theme.icons .. "Actions/exit.png"
-theme.titlebar_close_button_focus  = theme.icons .. "Actions/exit.png"
+theme.titlebar_close_button_normal = theme.getIcon("actions", "exit")
+theme.titlebar_close_button_focus  = theme.getIcon("actions", "exit")
 
-theme.titlebar_floating_button_normal_inactive = theme.icons .. "Actions/float_inactive.png"
-theme.titlebar_floating_button_focus_inactive  = theme.icons .. "Actions/float_inactive.png"
-theme.titlebar_floating_button_normal_active   = theme.icons .. "Actions/float_active.png"
-theme.titlebar_floating_button_focus_active    = theme.icons .. "Actions/float_active.png"
+theme.titlebar_floating_button_normal_inactive = theme.getIcon("actions", "float_inactive")
+theme.titlebar_floating_button_focus_inactive  = theme.getIcon("actions", "float_inactive")
+theme.titlebar_floating_button_normal_active   = theme.getIcon("actions", "float_active")
+theme.titlebar_floating_button_focus_active    = theme.getIcon("actions", "float_active")
 
-theme.titlebar_maximized_button_normal_inactive = theme.icons .. "Actions/maximize_inactive.png"
-theme.titlebar_maximized_button_focus_inactive  = theme.icons .. "Actions/maximize_inactive.png"
-theme.titlebar_maximized_button_normal_active   = theme.icons .. "Actions/maximize_active.png"
-theme.titlebar_maximized_button_focus_active    = theme.icons .. "Actions/maximize_active.png"
+theme.titlebar_maximized_button_normal_inactive = theme.getIcon("actions", "maximize_inactive")
+theme.titlebar_maximized_button_focus_inactive  = theme.getIcon("actions", "maximize_inactive")
+theme.titlebar_maximized_button_normal_active   = theme.getIcon("actions", "maximize_active")
+theme.titlebar_maximized_button_focus_active    = theme.getIcon("actions", "maximize_active")
 
-theme.titlebar_ontop_button_normal_inactive = theme.icons .. "Actions/ontop_inactive.png"
-theme.titlebar_ontop_button_focus_inactive  = theme.icons .. "Actions/ontop_inactive.png"
-theme.titlebar_ontop_button_normal_active   = theme.icons .. "Actions/ontop_active.png"
-theme.titlebar_ontop_button_focus_active    = theme.icons .. "Actions/ontop_active.png"
+theme.titlebar_ontop_button_normal_inactive = theme.getIcon("actions", "ontop_inactive")
+theme.titlebar_ontop_button_focus_inactive  = theme.getIcon("actions", "ontop_inactive")
+theme.titlebar_ontop_button_normal_active   = theme.getIcon("actions", "ontop_active")
+theme.titlebar_ontop_button_focus_active    = theme.getIcon("actions", "ontop_active")
 
-theme.titlebar_sticky_button_normal_inactive = theme.icons .. "Actions/sticky_inactive.png"
-theme.titlebar_sticky_button_focus_inactive  = theme.icons .. "Actions/sticky_inactive.png"
-theme.titlebar_sticky_button_normal_active   = theme.icons .. "Actions/sticky_active_active.png"
-theme.titlebar_sticky_button_focus_active    = theme.icons .. "Actions/sticky_active.png"
+theme.titlebar_sticky_button_normal_inactive = theme.getIcon("actions", "sticky_inactive")
+theme.titlebar_sticky_button_focus_inactive  = theme.getIcon("actions", "sticky_inactive")
+theme.titlebar_sticky_button_normal_active   = theme.getIcon("actions", "sticky_active_active")
+theme.titlebar_sticky_button_focus_active    = theme.getIcon("actions", "sticky_active")
 
 theme.wallpaper = "/home/miles/.local/share/GUI/Wallpapers/Default.png"
 
@@ -163,9 +170,5 @@ theme.layout_spiral     = "/usr/share/awesome/themes/default/layouts/spiralw.png
 theme.layout_dwindle    = "/usr/share/awesome/themes/default/layouts/dwindlew.png"
 
 theme.awesome_icon = "/usr/share/awesome/icons/awesome16.png"
-
--- Define the icon theme for application icons. If not set then the icons
--- from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icon_theme = nil
 
 return theme
