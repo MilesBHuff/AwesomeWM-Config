@@ -2,6 +2,7 @@
 -- -----------------------------------------------------------------------------
 pcall(require, "luarocks.loader") -- If LuaRocks is installed, make sure that packages installed through it are found. If LuaRocks is not installed, do nothing.
 awful = require("awful")
+require("naughty")
 beautiful = require("beautiful")
 
 -- Variables

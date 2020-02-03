@@ -8,7 +8,7 @@ end
 -- -----------------------------------------------------------------------------
 notify = function(args)
     args = try_var(args, {})
-    require("naughty").notify({
+    naughty.notify({
 		preset = (args.preset ~= nil) and naughty.config.presets[args.preset] or nil,
 		title  = try_var(args.title, "Notification"),
 		text   = args.text,
