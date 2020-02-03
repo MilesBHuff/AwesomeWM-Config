@@ -20,16 +20,16 @@ local settings_menu = {
 	{"A&wesome-configuration", env .. edit .. " " .. awesome.conffile,   nil},
 }
 return {
-	{"&Settings",                 settings_menu,                        beautiful.getIcon("categories", "preferences-desktop")},
+	{"&Settings",                 settings_menu,                        beautiful.get_icon("preferences-desktop")},
 	{nil,                         nil,                                  nil},
-	{"&Wine-manager",             env .. "playonlinux",                 beautiful.getIcon("apps", "wine")},
-	{"System-&monitor",           env .. "ksysguard",                   beautiful.getIcon("apps", "system-monitor")},
-	{"&Info-center",              env .. "hardinfo",                    beautiful.getIcon("apps", "system-info")},
-	{"&Help",                     env .. terminal .. " -e man awesome", beautiful.getIcon("apps", "help-browser")},
+	{"&Wine-manager",             env .. "playonlinux",                 beautiful.get_icon("wine")},
+	{"System-&monitor",           env .. "ksysguard",                   beautiful.get_icon("system-monitor")},
+	{"&Info-center",              env .. "hardinfo",                    beautiful.get_icon("system-info")},
+	{"&Help",                     env .. terminal .. " -e man awesome", beautiful.get_icon("help-browser")},
 	{"&Cleaner",                  env .. "bleachbit",                   nil},
 	{nil,                         nil,                                  nil},
 	{"&User-manager (root)",      env .. "gksudo kuser %i -caption %c", nil},
-	{"&Partition-manager (root)", env .. "gksudo gparted",              beautiful.getIcon("apps", "partitioner")},
-	{"SMART-&inspector (root)",   env .. "gksudo gsmartcontrol",        beautiful.getIcon("apps", "disk-configurer")},
+	{"&Partition-manager (root)", env .. "gksudo gparted",              beautiful.get_icon("partitioner")},
+	{"SMART-&inspector (root)",   env .. "gksudo gsmartcontrol",        beautiful.get_icon("disk-configurer")},
 	{"C&leaner (root)",           env .. "gksudo bleachbit",            nil},
 }

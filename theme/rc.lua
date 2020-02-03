@@ -1,12 +1,15 @@
 theme = {}
-theme.conffile   = "/home/miles/.config/awesome/theme/rc.lua"
+theme.conffile   = globals.cwd .. "theme/rc.lua"
+theme.icons      = globals.cwd .. "theme/.icon-cache"
 theme.icon_theme = "Delft" -- Define the icon theme for application icons. If not set then the icons from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icons      = "/usr/share/icons/" .. theme.icon_theme
 
 -- Get-Icon function
 --------------------------------------------------------------------------------
-theme.getIcon = function(category, name)
-    return io.popen(globals.cwd .. "theme/lib/get-icon.bash '" .. theme.icon_theme .. "' '" .. category .. "' '" .. name .. "'"):read("*all"):gsub("\n", "")
+theme.get_icon = function(icon)
+    return theme.icons .. "/" .. icon .. ".png"
+end
+theme.get_system_icon = function(icon_path)
+    return "/usr/share/icons/" .. theme.icon_theme .. icon_path
 end
 
 -- Base values
@@ -115,7 +118,7 @@ theme.tooltip_border_color = theme.view_bg_border
 -- theme.mouse_finder_factor          =
 
 -- Menu
-theme.menu_submenu_icon = theme.icons .. "-Darkest/actions/24/next.png"
+theme.menu_submenu_icon = theme.get_system_icon("-Darkest/actions/24/next.png")
 theme.menu_height       = 24
 theme.menu_width        = 192
 theme.menu_bg_normal    = theme.window_bg_normal
@@ -130,28 +133,28 @@ theme.normal_border_width = 0
 theme.dialog_border_width = 4
 
 -- Define the image to load
-theme.titlebar_close_button_normal = theme.getIcon("actions", "exit")
-theme.titlebar_close_button_focus  = theme.getIcon("actions", "exit")
+theme.titlebar_close_button_normal = theme.get_icon("exit")
+theme.titlebar_close_button_focus  = theme.get_icon("exit")
 
-theme.titlebar_floating_button_normal_inactive = theme.getIcon("actions", "float_inactive")
-theme.titlebar_floating_button_focus_inactive  = theme.getIcon("actions", "float_inactive")
-theme.titlebar_floating_button_normal_active   = theme.getIcon("actions", "float_active")
-theme.titlebar_floating_button_focus_active    = theme.getIcon("actions", "float_active")
+theme.titlebar_floating_button_normal_inactive = theme.get_icon("float_inactive")
+theme.titlebar_floating_button_focus_inactive  = theme.get_icon("float_inactive")
+theme.titlebar_floating_button_normal_active   = theme.get_icon("float_active")
+theme.titlebar_floating_button_focus_active    = theme.get_icon("float_active")
 
-theme.titlebar_maximized_button_normal_inactive = theme.getIcon("actions", "maximize_inactive")
-theme.titlebar_maximized_button_focus_inactive  = theme.getIcon("actions", "maximize_inactive")
-theme.titlebar_maximized_button_normal_active   = theme.getIcon("actions", "maximize_active")
-theme.titlebar_maximized_button_focus_active    = theme.getIcon("actions", "maximize_active")
+theme.titlebar_maximized_button_normal_inactive = theme.get_icon("maximize_inactive")
+theme.titlebar_maximized_button_focus_inactive  = theme.get_icon("maximize_inactive")
+theme.titlebar_maximized_button_normal_active   = theme.get_icon("maximize_active")
+theme.titlebar_maximized_button_focus_active    = theme.get_icon("maximize_active")
 
-theme.titlebar_ontop_button_normal_inactive = theme.getIcon("actions", "ontop_inactive")
-theme.titlebar_ontop_button_focus_inactive  = theme.getIcon("actions", "ontop_inactive")
-theme.titlebar_ontop_button_normal_active   = theme.getIcon("actions", "ontop_active")
-theme.titlebar_ontop_button_focus_active    = theme.getIcon("actions", "ontop_active")
+theme.titlebar_ontop_button_normal_inactive = theme.get_icon("ontop_inactive")
+theme.titlebar_ontop_button_focus_inactive  = theme.get_icon("ontop_inactive")
+theme.titlebar_ontop_button_normal_active   = theme.get_icon("ontop_active")
+theme.titlebar_ontop_button_focus_active    = theme.get_icon("ontop_active")
 
-theme.titlebar_sticky_button_normal_inactive = theme.getIcon("actions", "sticky_inactive")
-theme.titlebar_sticky_button_focus_inactive  = theme.getIcon("actions", "sticky_inactive")
-theme.titlebar_sticky_button_normal_active   = theme.getIcon("actions", "sticky_active_active")
-theme.titlebar_sticky_button_focus_active    = theme.getIcon("actions", "sticky_active")
+theme.titlebar_sticky_button_normal_inactive = theme.get_icon("sticky_inactive")
+theme.titlebar_sticky_button_focus_inactive  = theme.get_icon("sticky_inactive")
+theme.titlebar_sticky_button_normal_active   = theme.get_icon("sticky_active_active")
+theme.titlebar_sticky_button_focus_active    = theme.get_icon("sticky_active")
 
 theme.wallpaper = "/home/miles/.local/share/GUI/Wallpapers/Default.png"
 

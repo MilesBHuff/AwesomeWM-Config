@@ -18,15 +18,15 @@ wine  = " WINEPREFIX='/home/miles/.wine' "
 
 --------------------------------------------------------------------------------
 local main_menu = awful.menu({items = {
-	{"&Utilities",      require("de/widgets/menus/utilities"),      beautiful.getIcon("categories", "applications-accessories")},
-	{"&Productivity",   require("de/widgets/menus/productivity"),   beautiful.getIcon("categories", "applications-office")},
-	{"&Multimedia",     require("de/widgets/menus/multimedia"),     beautiful.getIcon("categories", "applications-multimedia")},
-	{"G&raphics",       require("de/widgets/menus/graphics"),       beautiful.getIcon("categories", "applications-graphics")},
-	{"&Gaming",         require("de/widgets/menus/gaming"),         beautiful.getIcon("categories", "applications-games")},
-	{"&Administration", require("de/widgets/menus/administration"), beautiful.getIcon("categories", "applications-system")},
+	{"&Utilities",      require("de/widgets/menus/utilities"),      beautiful.get_icon("applications-accessories")},
+	{"&Productivity",   require("de/widgets/menus/productivity"),   beautiful.get_icon("applications-office")},
+	{"&Multimedia",     require("de/widgets/menus/multimedia"),     beautiful.get_icon("applications-multimedia")},
+	{"G&raphics",       require("de/widgets/menus/graphics"),       beautiful.get_icon("applications-graphics")},
+	{"&Gaming",         require("de/widgets/menus/gaming"),         beautiful.get_icon("applications-games")},
+	{"&Administration", require("de/widgets/menus/administration"), beautiful.get_icon("applications-system")},
 	{nil,               nil,                                        nil},
 	{"&Leaving",        require("de/widgets/menus/leaving"),        nil},
 }})
 
 --------------------------------------------------------------------------------
-return awful.widget.launcher({image = beautiful.getIcon("apps", "gnome-panel-launcher"), menu = main_menu})
+return awful.widget.launcher({image = beautiful.get_icon("gnome-panel-launcher"), menu = main_menu})
