@@ -12,6 +12,7 @@ return {
 	{nil,                nil,                                                         nil},
 	{"&Char'-selector",  env .. "gnome-character-map",                                beautiful.get_icon("character-selector")},
 	{"Ca&lculator",      env .. "qalculate-gtk",                                      beautiful.get_icon("calculator")},
+	{"&Authenticator",   env .. "chromium --app-id=gaedmjdfmmahhbjefcbgaolhhanlaolb", beautiful.get_icon("authy")},
 	{nil,                nil,                                                         nil},
 	{"Communications",   communication_menu,                                          nil},
 	{nil,                nil,                                                         nil},
