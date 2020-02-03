@@ -8,7 +8,7 @@ CACHE_DIR='../.icon-cache'
 ## Process arguments
 ## -----------------------------------------------------------------------------
 if [[ -z "$1" || ! -d "$ICON_DIR/$1" ]]; then
-    printErr "ERROR: Invalid icon theme; please provide a valid icon theme (as listed under '$ICON_DIR') as the first argument to this script. Exiting..."
+    echo "ERROR: Invalid icon theme; please provide a valid icon theme (as listed under '$ICON_DIR') as the first argument to this script. Exiting..." >&2
     exit 1
 fi
 
