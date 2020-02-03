@@ -1,22 +1,22 @@
-communication_menu = {
-	{"&Webchat client",  env .. "franz",   nil},
-	{"&IRC client",      env .. "hexchat", nil},
-	{"I&M client",       env .. "pidgin",  nil},
+local communication_menu = {
+	{"&Webchat client",  env .. "franz",   beautiful.get_icon("franz")},
+	{"&IRC client",      env .. "hexchat", beautiful.get_icon("hexchat")},
+	{"I&M client",       env .. "pidgin",  beautiful.get_icon("applications-chat-panel")},
 	{nil,                nil,              nil},
-	{"&Discord",         env .. "discord", nil},
-  --{"&Skype",           env .. "skype",   nil},
+	{"&Discord",         env .. "discord", beautiful.get_icon("discord")},
+  --{"&Skype",           env .. "skype",   beautiful.get_icon("skype")},
 }
 return {
-	{"&Terminal",        env .. terminal,                                             beautiful.get_icon("terminal")},
+	{"&Terminal",        env .. terminal,                                             beautiful.get_icon("utilities-terminal")},
 	{"&File-manager",    env .. "dolphin",                                            beautiful.get_icon("file-manager")},
 	{nil,                nil,                                                         nil},
-	{"&Char'-selector",  env .. "gnome-character-map",                                beautiful.get_icon("character-selector")},
-	{"Ca&lculator",      env .. "qalculate-gtk",                                      beautiful.get_icon("calculator")},
+	{"C&haracter map",   env .. "gnome-character-map",                                beautiful.get_icon("accessories-character-map")},
+	{"&Calculator",      env .. "qalculate-gtk",                                      beautiful.get_icon("accessories-calculator")},
+    {"A&rchiver",        env .. "xarchiver",                                          beautiful.get_icon("archive-manager")},
+	{nil,                nil,                                                         nil},
+	{"Communications",   communication_menu,                                          beautiful.get_icon("ekiga")},
+	{nil,                nil,                                                         nil},
 	{"&Authenticator",   env .. "chromium --app-id=gaedmjdfmmahhbjefcbgaolhhanlaolb", beautiful.get_icon("authy")},
-	{nil,                nil,                                                         nil},
-	{"Communications",   communication_menu,                                          nil},
-	{nil,                nil,                                                         nil},
-  --{"archiver",         env .. "chrt -b 0 WINEPREFIX='/home/Sweyn78/~/.wine' wine 'C:\\windows\\command\\start.exe /Unix' /home/Sweyn78/~/.wine/dosdevices/c:/users/sweyn78/Start\ Menu/Programs/7-Zip/7-Zip\ File\ Manager.lnk"}
-	{"&Torrent-client",  env .. "deluge-gtk -q",                                      nil},
-	{"&Virtual machine", env .. "bash '" .. globals.cwd .. "lib/wrappers/vbox.bash'", nil},
+	{"&Torrent client",  env .. "deluge-gtk -q",                                      beautiful.get_icon("application-x-bittorrent")},
+	{"&Virtual machine", env .. "bash '" .. globals.cwd .. "lib/wrappers/vbox.bash'", beautiful.get_icon("virtualbox")},
 }
