@@ -64,7 +64,7 @@ local rpg_menu = {
 	{"&Lord of the Rings Online",  env .. "playonlinux --run 'LOTRO'",                                beautiful.get_icon("lotro_original")},
 	{nil,                          nil,                                                               nil},
 	{"Sk&yrim",                    env .. "bash '" .. globals.cwd .. "lib/wrappers/skyrim.bash'",     nil},
-	{"&Oblivion",                  env .. "WINEDEBUG=-all playonlinux --run 'obse_loader'",           beautiful.get_icon("tesiv_original")},
+	{"&Oblivion",                  env .. "playonlinux --run 'obse_loader'",                          beautiful.get_icon("tesiv_original")},
 	{"&Morrowind",                 nil,                                                               nil},
 	{"&TESO",                      nil,                                                               nil},
 }

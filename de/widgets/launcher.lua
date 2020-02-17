@@ -9,12 +9,11 @@ editor = os.getenv("VISUAL") or os.getenv("EDITOR")
 --------------------------------------------------------------------------------
 -- Menu variables
 edit  = terminal .. " -e " .. editor
-env   = " /usr/bin/env "
+env   = " /usr/bin/env WINEDEBUG=-all "
 kgtk  = " /usr/bin/kgtk-wrapper "
 oput  = " 1>&- 2>&- "
-steam = " LD_PRELOAD=/usr/lib32/libudev.so.1 /usr/bin/steam-native "
+steam = " steam-runtime "
 game  = " " .. globals.cwd .. "lib/wrappers/run-wo-comp.sh "
-wine  = " WINEPREFIX='/home/miles/.wine' "
 
 --------------------------------------------------------------------------------
 local main_menu = awful.menu({items = {

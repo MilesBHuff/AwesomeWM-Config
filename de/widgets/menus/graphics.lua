@@ -8,6 +8,6 @@ return {
 	{"&Font-editor",          env .. "fontforge",   nil},
 	{nil,                     nil,                  nil},
 	{"P&hotobooth",           env .. "guvcview",    beautiful.get_icon("camera")},
-  --{"&Color-profiler",       env .. "WINEPREFIX='/home/sweyn78/.wine' wine C:\\windows\\command\\start.exe /Unix /home/sweyn78/.wine/dosdevices/c:/users/maiyil78/Start\ Menu/Programs/LProf/LProf.lnk", nil},
+  --{"&Color-profiler",       env .. "wine C:\\windows\\command\\start.exe /Unix /home/miles/.wine/dosdevices/c:/users/maiyil78/Start\ Menu/Programs/LProf/LProf.lnk", nil},
 	{"M&ass image-processor", env .. "phatch",      beautiful.get_icon("phatch")},
 }
