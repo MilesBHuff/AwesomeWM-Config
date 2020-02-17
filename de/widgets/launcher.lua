@@ -25,7 +25,7 @@ local main_menu = awful.menu({items = {
 	{"&Gaming",         require("de/widgets/menus/gaming"),         beautiful.get_icon("applications-games")},
 	{"&Administration", require("de/widgets/menus/administration"), beautiful.get_icon("applications-system")},
 	{nil,               nil,                                        nil},
-	{"&Leaving",        require("de/widgets/menus/leaving"),        nil},
+	{"&Quit",           require("de/widgets/menus/leaving"),        beautiful.get_icon("application-exit")},
 }})
 
 --------------------------------------------------------------------------------
