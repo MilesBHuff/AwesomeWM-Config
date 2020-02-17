@@ -3,13 +3,13 @@
 local datetime = wibox.widget{
     widget  = wibox.widget.textclock,
     format  =
-        "<span font='Noto Sans 7.5'>" ..
+        "<span font='" .. beautiful.font_sans .. "7.5'>" ..
             "%b %d" ..
         "</span>%n" ..
-        "<span font='Noto Sans Mono Bold 9.0'>" ..
+        "<span font='" .. beautiful.font_mono .. "9.0'>" ..
             "%H:%M" ..
         "</span>" ..
-        "<span font='Noto Sans 7.5'>" ..
+        "<span font='" .. beautiful.font_sans .. "7.5'>" ..
             "UTC%-:::z" ..
         "</span>",
     align   = 'center',

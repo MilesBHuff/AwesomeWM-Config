@@ -7,7 +7,7 @@ local new_spacer = function(markup)
         align  = "center",
         valign = "center",
         wrap   = "word",
-        font   = "Noto Mono 9.3"
+        font   = beautiful.font_mono .. "9.3"
     }
 end
 --------------------------------------------------------------------------------

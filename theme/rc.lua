@@ -1,10 +1,10 @@
 theme = {}
-theme.conffile   = globals.cwd .. "theme/rc.lua"
+theme.conffile = globals.cwd .. "theme/rc.lua"
+
+-- Icons
+--------------------------------------------------------------------------------
 theme.icons      = globals.cwd .. "theme/.icon-cache"
 theme.icon_theme = "Delft" -- Define the icon theme for application icons. If not set then the icons from /usr/share/icons and /usr/share/icons/hicolor will be used.
-
--- Get-Icon function
---------------------------------------------------------------------------------
 theme.get_icon = function(icon)
     return theme.icons .. "/" .. icon .. ".png"
 end
@@ -12,17 +12,24 @@ theme.get_system_icon = function(icon_path)
     return "/usr/share/icons/" .. theme.icon_theme .. icon_path
 end
 
+-- Fonts
+--------------------------------------------------------------------------------
+--NOTE: Don't define your fonts here if you can avoid doing so.  Instead, define them in your system's fontconfig.
+-- theme.font_mono  = "monospace "
+-- theme.font_sans  = "sans-serif "
+-- theme.font_serif = "serif "
+theme.font_mono  = "Noto Sans Mono "
+theme.font_sans  = "Noto Sans "
+theme.font_serif = "Noto Serif "
+
 -- Base values
 --------------------------------------------------------------------------------
-theme.font_mono  = "monospace "
-theme.font_sans  = "sans-serif "
-theme.font_serif = "serif "
 theme.view_bg_selected = "#A4A4A4"
 theme.view_bg_focus    = "#909090"
 theme.view_bg_normal   = "#6A6A6A"
 theme.view_bg_inactive = "#626262"
-theme.window_bg_border = "#4A4A4A"
-theme.window_fg_border = "#777777"
+theme.view_bg_border   = "#4A4A4A"
+theme.view_fg_border   = "#777777"
 theme.view_fg_active   = "#EFEFEF"
 theme.view_fg_normal   = "#DFDFDF"
 theme.view_fg_inactive = "#CFCFCF"
@@ -128,11 +135,7 @@ theme.menu_fg_focus     = theme.window_fg_selected
 theme.menu_border_color = theme.window_bg_border
 theme.menu_border_width = 1
 
--- Custom settings
-theme.normal_border_width = 0
-theme.dialog_border_width = 4
-
--- Define the image to load
+-- Titlebar
 theme.titlebar_close_button_normal = theme.get_icon("exit")
 theme.titlebar_close_button_focus  = theme.get_icon("exit")
 
@@ -156,7 +159,9 @@ theme.titlebar_sticky_button_focus_inactive  = theme.get_icon("sticky_inactive")
 theme.titlebar_sticky_button_normal_active   = theme.get_icon("sticky_active_active")
 theme.titlebar_sticky_button_focus_active    = theme.get_icon("sticky_active")
 
-theme.wallpaper = "/home/miles/.local/share/GUI/Wallpapers/Default.png"
+-- Custom settings
+theme.normal_border_width = 0
+theme.dialog_border_width = 4
 
 -- You can use your own layout icons like this:
 theme.layout_fairh      = "/usr/share/awesome/themes/default/layouts/fairhw.png"
@@ -173,5 +178,6 @@ theme.layout_spiral     = "/usr/share/awesome/themes/default/layouts/spiralw.png
 theme.layout_dwindle    = "/usr/share/awesome/themes/default/layouts/dwindlew.png"
 
 theme.awesome_icon = "/usr/share/awesome/icons/awesome16.png"
+theme.wallpaper = "/home/miles/.local/share/GUI/Wallpapers/Default.png"
 
 return theme

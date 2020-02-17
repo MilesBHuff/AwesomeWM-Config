@@ -20,8 +20,8 @@ monitors.cpu = wibox.widget{
 }
 tooltips.cpu = awful.tooltip({objects = {monitors.cpu}})
 
-monitors.cpu:set_font("Noto Mono 7.5")
---tooltips.cpu:set_font("Noto Mono 7.5")
+monitors.cpu:set_font(beautiful.font_mono .. "7.5")
+--tooltips.cpu:set_font(beautiful.font_mono .. "7.5")
 
 callbacks.cpu = function()
     monitors.cpu:set_text(get_usage("-1n"))
@@ -42,8 +42,8 @@ monitors.ram = wibox.widget{
 }
 tooltips.ram = awful.tooltip({objects = {monitors.ram}})
 
-monitors.ram:set_font("Noto Mono 7.5")
---tooltips.ram:set_font("Noto Mono 7.5")
+monitors.ram:set_font(beautiful.font_mono .. "7.5")
+--tooltips.ram:set_font(beautiful.font_mono .. "7.5")
 
 callbacks.ram = function()
     monitors.ram:set_text(get_usage("-1nr"))
