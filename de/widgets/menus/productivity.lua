@@ -26,9 +26,9 @@ local mapping_menu = {
     {"Map &projector", cmd("flex-projector"), beautiful.get_icon("")},
 }
 local office_menu = {
-	{"&Office suite",    cmd("libreoffice"),    beautiful.get_icon("libreoffice-main")},
-	{"&Document viewer", cmd("okular"),         beautiful.get_icon("accessories-document-viewer")},
-	{"&Notes",           cmd("standard-notes"), beautiful.get_icon("gnome-sticky-notes-applet")},
+	{"&Office suite",    cmd("libreoffice"),           beautiful.get_icon("libreoffice-main")},
+	{"&Document viewer", cmd("okular"),                beautiful.get_icon("accessories-document-viewer")},
+	{"&Notes",           cmd("standardnotes-desktop"), beautiful.get_icon("gnome-sticky-notes-applet")},
 	{nil, nil, nil},
 	{"&Email client",    cmd("thunderbird"),    beautiful.get_icon("applications-mail")},
     {"C&alendar",        cmd(""),               beautiful.get_icon("calendar")},
