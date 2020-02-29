@@ -7,9 +7,9 @@ awful.rules.rules = {
     -- All windows
     {rule = {}, properties = {
         border_color         = beautiful.border_normal,
-        buttons              = clientbuttons,
+        buttons              = input.clientbuttons,
         focus                = awful.client.focus.filter,
-        keys                 = clientkeys,
+        keys                 = input.clientkeys,
         maximized_horizontal = false,
         maximized_vertical   = false,
         raise                = true

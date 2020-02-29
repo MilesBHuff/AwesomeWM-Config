@@ -31,6 +31,6 @@ end
 -- Window management (post-DE)
 -- -----------------------------------------------------------------------------
 require("awful.autofocus")
-require("wm/input")
+input = require("wm/input")
 require("wm/rules")
 require("wm/signals")
