@@ -64,7 +64,7 @@ client.connect_signal("manage", function (c, startup)
         awful.titlebar(c):set_widget(layout)
 
 	properties = {
-	    floating = true
+	    floating = true,
 	}
     end
 end)

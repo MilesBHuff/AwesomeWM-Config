@@ -6,11 +6,11 @@ tags[1] = {
   layout = globals.layouts[2],
 }
 tags[2] = {
-  name   = "INET",
+  name   = "FIXD",
   layout = globals.layouts[1],
 }
 tags[3] = {
-  name   = "OVER",
+  name   = "FULL",
   layout = globals.layouts[4],
 }
 

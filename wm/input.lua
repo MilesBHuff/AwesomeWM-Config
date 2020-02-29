@@ -120,7 +120,7 @@ end
 local clientkeys = awful.util.table.join(
     awful.key({globals.modkey           }, "r",      function(c) c.fullscreen = not c.fullscreen  end),
     awful.key({globals.modkey           }, "q",      function(c) c:kill()                         end),
-    --awful.key({globals.modkey, "Control"}, "space",  awful.client.floating.toggle                    ),
+  --awful.key({globals.modkey, "Control"}, "space",  awful.client.floating.toggle                    ),
     awful.key({globals.modkey, "Control"}, "Return", function(c) c:swap(awful.client.getmaster()) end),
     awful.key({globals.modkey           }, "t",      awful.client.movetoscreen                       ),
     awful.key({globals.modkey           }, "f",      function(c) c.ontop = not c.ontop            end),
